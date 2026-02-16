@@ -3261,3 +3261,29 @@ if (IS_HEADER) {
 		});
 	}, 0);
 }
+// ===== START COUNTDOWN EFFECT =====
+document.addEventListener("DOMContentLoaded", () => {
+	const overlay = document.getElementById("startOverlay");
+	const text = document.getElementById("countdownText");
+	const music = document.getElementById("bgMusic");
+
+	if (!overlay) return;
+
+	overlay.addEventListener("click", async () => {
+		const steps = ["1", "2", "3", "🎆 CHÚC MỪNG NĂM MỚI BÍNH NGỌ 2026 🎆"];
+
+		for (let i = 0; i < steps.length; i++) {
+			text.textContent = steps[i];
+			text.style.fontSize = i === 3 ? "2rem" : "4rem";
+			await new Promise(res => setTimeout(res, 1000));
+		}
+
+		overlay.style.opacity = "0";
+
+		setTimeout(() => {
+			overlay.remove();
+			if (music) music.play().catch(()=>{});
+			togglePause(false);
+		}, 1000);
+	});
+});
