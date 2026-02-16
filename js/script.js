@@ -3270,7 +3270,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (!overlay) return;
 
 	overlay.addEventListener("click", async () => {
-		const steps = ["1", "2", "3", "🎆 CHÚC MỪNG NĂM MỚI BÍNH NGỌ 2026 🎆"];
+		const steps = ["3", "2", "1", "🎆 CHÚC MỪNG NĂM MỚI BÍNH NGỌ 2026 🎆"];
 
 		for (let i = 0; i < steps.length; i++) {
 			text.textContent = steps[i];
