@@ -1754,6 +1754,15 @@ function handleResize() {
 handleResize();
 
 window.addEventListener("resize", handleResize);
+// ===== BẬT NHẠC KHI CLICK MÀN HÌNH =====
+document.addEventListener("click", function () {
+	const music = document.getElementById("bgMusic");
+
+	if (music && music.paused) {
+		music.play().catch(err => console.log(err));
+	}
+}, { once: true });
+
 
 // Dynamic globals
 let currentFrame = 0;
